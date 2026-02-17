@@ -13,7 +13,7 @@ print(s3)
 
 #---------------------------#---------------------------#---------------------------#--------------------------------------
 
-#2. Create a list of even numbers between 1 and 50 using list comprehension. 
+#2. Create a list of even numbers between 1 and 50 using list comprehension
 
 ev =[x for x in range(1,50)
     if x % 2 != 0 ]
