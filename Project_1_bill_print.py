@@ -314,17 +314,17 @@ while True:
 ##Hotel bill printing and storing data in database all included in this
 
 
+
 from datetime import datetime
 import pyodbc
 
 
-# -------- Database Class --------
 class Database:
     def __init__(self):
         self.conn = pyodbc.connect(
             "Driver={SQL Server};"
-            "Server=DESKTOP-RPFEVBB\SQLEXPRESS01;"          # Change if needed
-            "Database=pythonpractice;"          # Your DB name
+            "Server=DESKTOP-RPFEVBB\SQLEXPRESS01;"  
+            "Database=pythonpractice;"         
             "Trusted_Connection=yes;"
         )
         self.cursor = self.conn.cursor()
@@ -334,9 +334,9 @@ class Database:
 
         self.cursor.execute("""
             INSERT INTO Customers (CustomerName, BillDate, TotalAmount)
-            OUTPUT INSERTED.CustomerID
+            OUTPUT INSERTED.CustomerID        
             VALUES (?, ?, ?)
-        """, (name, now, total))
+        """, (name, now, total)) 
 
         customer_id = self.cursor.fetchone()[0]
         self.conn.commit()
@@ -353,7 +353,7 @@ class Database:
         self.conn.commit()
 
 
-# -------- Menu Class --------
+
 class Menu:
     def __init__(self):
         self.items = {
@@ -366,7 +366,6 @@ class Menu:
         return self.items.get(item, None)
 
 
-# -------- Customer Order Class --------
 class CustomerOrder:
     def __init__(self, customer_name, menu):
         self.customer_name = customer_name
@@ -395,40 +394,40 @@ class CustomerOrder:
             print("{:<15} {:<10} {:<10} {:<10}".format(item, qty, rate, amount))
 
         print("-" * 40)
-        print(f"Total Amount: {self.total}")
+        print("Total Amount: ",self.total)
         print("=" * 40)
 
     def save_to_database(self, db):
         customer_id = db.save_customer(self.customer_name, self.total)
         db.save_items(customer_id, self.bill_items)
-        print("✅ Bill saved to database successfully.")
+        print("Bill saved ino database succesfully")
 
 
 # -------- Main Execution --------
 
-menu = Menu()
-db = Database()
+menu = Menu()      #objet crete
+db = Database()    #same here
 
 while True:
-    customer_name = input("\nEnter customer name: ")
+    customer_name = input("\nenter customer name: ")
     customer = CustomerOrder(customer_name, menu)
 
     while True:
-        item = input("Enter item name (Dosa/Idli/Tea): ").title()
-        qty = int(input("Enter quantity: "))
+        item = input("enter item name (Dosa/Idli/Tea): ").title()
+        qty = int(input("enter quantity: "))
         customer.add_item(item, qty)
 
-        more = input("Add more items? (yes/no): ").lower()
+        more = input("add more items? (yes/no): ").lower()
         if more != "yes":
             break
 
     customer.print_bill()
 
-    save = input("Save bill to database? (yes/no): ").lower()
+    save = input("save bill to database.? (yes/no): ").lower()
     if save == "yes":
         customer.save_to_database(db)
 
-    next_customer = input("Next customer? (yes/no): ").lower()
+    next_customer = input("next customer (yes/no): ").lower()
     if next_customer != "yes":
         break
 
