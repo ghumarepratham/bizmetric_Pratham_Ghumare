@@ -24,7 +24,7 @@
 # print(name[::-2]) #output every 2nd character in reverse order
 
 
-
+# #----------------------------------------------------------------
 
 
 # 2.	 L1 = [‘a’ , ‘b’, 20, 30, ‘t’, 100, 300, 400, ‘Happy’, ‘major’]
@@ -51,7 +51,7 @@
 
       
 
-
+# #----------------------------------------------------------------
 
 
 
@@ -73,11 +73,15 @@
 # print(l2[: 3])  # output from starting to 2nd of index : "[1, 2, 3]"
 # print(l2[3: ])  #output from 3index till last : "[5, ['a', 'b', 'work hard'], 100, 200, 'Success']"
 
+
+# #----------------------------------------------------------------
+
 # # 4.	From the above l2 value ‘b’ must be changed to ‘BEE’.
 
 # l2[4][1] = 'BEE'
 # print(l2)
 
+# #----------------------------------------------------------------
 
 # # 5.	From l2 “BEE” has to discard.
 
@@ -86,6 +90,9 @@
 # print(l2[4][1])
 # print(l2)
 
+# #----------------------------------------------------------------
+
+
 
 # # 6.	In l2 add a dictionary at the end {‘insect’: [‘bee’, ‘moth’] , ‘bird’ : [‘parrot’, ‘sparrow’]}
 
@@ -93,6 +100,11 @@
 
 # l2.extend(d)
 # print(l2)
+
+
+
+# #----------------------------------------------------------------
+
 
 
 # # 7.	From l2 extract insect information.
@@ -104,6 +116,8 @@
 # print(bird_info)
 
 
+# #----------------------------------------------------------------
+
 # # 8.	Create a dictionary d1 = {‘a’:10, ‘b’:20, ‘c’ : 30} and add the d1 at 2nd position of l2
 
 # d1 = {'a':10, 'b':20, 'c' : 30}
@@ -111,13 +125,15 @@
 # l2.insert(2, d1)
 # print(l2)
 
-
+# #----------------------------------------------------------------
 
 # # 9.	Based on new l2 created here extract the value 10 from l2 dictionary.
 
 # print(l2)
 # print(l2[2]['a'])
 
+
+# #----------------------------------------------------------------
 
 
 # 10.	If l2 =[1,2,3,5, (90,40,50,10), ‘Python’, 400 ,[‘a’, ‘b’, ‘work hard’],100 , 200, “Success”, 
@@ -189,6 +205,7 @@
                            
 
 
+# #----------------------------------------------------------------
 
 
 # 12. Ask user to enter information about salary of the employee per year and rating received as A, B, C, D
@@ -263,6 +280,47 @@
 # User will enter values as subject, analytics(Y/N), Hostel (Y/N), food(How many months?), Transportation(semester/annual)
 
 
+
+# #Method-1-if else
+# core_fee=200000
+# analytics_extra_percent=0.10
+# Hostel_fee=200000
+# food_per_month=2000
+# transportation_per_semester=13000
+# l1=['HR','Finance','Marketing','DS']
+# subject=input("Which course you want to pursue(HR,Finance,Marketing,DS)").upper()
+# if subject not in  l1:
+#   print("Course is not available:")
+# else:
+#   analytics=input("Do you want analytics?(Y/N) :").upper()
+#   hostel=input("Do you want hostel?(Y/N) :").upper()
+#   food_months=int(input("Enter no. of foods months:"))
+#   transport=input("Do you want transportation facility?(semester/Annual) :").upper()
+#   course_fee=core_fee
+#   if subject !="DS" and analytics=='Y':
+#     analytics_fee=core_fee*analytics_extra_percent
+#     course_fee+=analytics_fee
+#   else:
+#     analytics_fee=0
+#   if hostel=='Y':
+#     Hostel_fee=Hostel_fee 
+#   else:
+#     Hostel_fee=0
+#   food_fee=food_per_month*food_months
+#   if transport=='SEMESTER':
+#     transport_fee=transportation_per_semester
+#   elif transport=='ANNUAl':
+#     transport_fee=transportation_per_semester*2
+#   else:
+#     print("Invalid transportation option")
+#     transport_fee=0
+#   total_cost=course_fee+Hostel_fee+food_fee+transport_fee 
+#   print("course_fee: ",course_fee)
+#   print("Hostel_Fee: ",Hostel_fee)
+#   print("food_fee: ",food_fee)
+#   print("Transport_Fee: ",transport_fee)
+#   print("-"*50)
+#   print("Total Annual Cost:",total_cost)
 
 
 
@@ -359,7 +417,7 @@
 # makrs_set = set(marks)
 # print(makrs_set)
 
-
+# #----------------------------------------------------------------
 
 # •	observe : errors and note it down for all conversions 
 # List operations 
@@ -374,6 +432,7 @@
 # •	Add combo to snames using extend. 
 
 
+# #----------------------------------------------------------------
 
 # 11.	Create one list l1 having two elements and l3 having 7 elements. Now at 4th position add l1 
 
@@ -383,7 +442,7 @@
 # l2.insert(3, l1)  #adding l1 at 4th position
 # print(l2)
 
-
+# #----------------------------------------------------------------
 
 
 # 12.	Collection is the list having values [1,2,3,[‘a’, ‘b’, ‘c’], 100, ‘Nisha’, 20.50, 90.10 ] 
@@ -412,7 +471,7 @@
 
 
 
-
+# #----------------------------------------------------------------
 
 
 
@@ -421,12 +480,14 @@
 # square = [i**2 for i in range(11)]
 # print(square)
 
-
+# #----------------------------------------------------------------
 
 # # 14.	Create the comprehensive list to find number divisible by 13 till 200
 
 # lst1 = [i for i in range(200) if i%13 == 0]
 # print(lst1)
+
+# #----------------------------------------------------------------
 
 
 # # 15.	Create the list which is divisible by 4 from 300 to 400  
@@ -434,6 +495,8 @@
 # s1 = [i for i in range(300, 400) if i%4== 0]
 # print(s1)
 
+
+# #----------------------------------------------------------------
 
 # # 16.	Create a comprehensive list to generate list up to x, y as a number. 
 # # For example if x = 3 list will be x_list = [0,1,2] and y=2 then y_list =[0,1]
@@ -459,7 +522,7 @@
 # u1 = [[i, j] for i in x_list for j in y_list]
 # print(u1)
 
-
+# #----------------------------------------------------------------
 
 
 
@@ -469,7 +532,7 @@
 # The update() method is used to add multiple elements to the set from an iterable (like a list, tuple, or another set).
 
 
-
+# #----------------------------------------------------------------
 
 
 # 18.	What is the difference between append and extend methods in list? 
@@ -478,12 +541,14 @@
 # The extend() method adds multiple elements to the end of the list from an iterable (like a list, tuple, or set).
 
 
+# #----------------------------------------------------------------
+
 # 19.	What is the difference between pop and remove methods? 
 # answer:
 # The pop() method removes and returns an element at a specified index (default is the last element) from the list.
 # The remove() method removes the first occurrence of a specified value from the list.
 
-
+# #----------------------------------------------------------------
 
 
 
@@ -493,12 +558,14 @@
 # The pop() method removes and returns an arbitrary element from a set. If the set is empty, it raises a KeyError.
 # The remove() method removes a specified element from a set. If the element is not found, it raises a KeyError.
 
+# #----------------------------------------------------------------
 
 
 # 21.	How to create empty set? 
 # empty_set = set()
 # print(empty_set, type(empty_set))
 
+# #----------------------------------------------------------------
 
 # # 22.	Create the set s1 and s2 and perform set operations like union, intersection, difference, set difference.
 
@@ -524,7 +591,7 @@
 # print(s1.symmetric_difference(s2))
 
 
-
+# #----------------------------------------------------------------
 
 # 26.	Create the format mentioned here.
 # *
@@ -541,7 +608,7 @@
                                
     
 
-
+# #----------------------------------------------------------------
 
 
 
@@ -559,7 +626,7 @@
 #     print()
 
 
-
+# #----------------------------------------------------------------
 
 
 # 28.	Str_val = “ABCD” then create the format as mentioned below:
@@ -575,6 +642,7 @@
 #     print()
 
 
+# #----------------------------------------------------------------
 
 
 
@@ -590,7 +658,7 @@
 #     print()    
 
 
-
+# #----------------------------------------------------------------
 
 
 # 30.	Create the format mentioned below:
@@ -606,6 +674,8 @@
 
 
 
+# #----------------------------------------------------------------
+
 
 # 31.	Val = “ABCD”  based on the Val, create the format mentioned below
 # D
@@ -614,11 +684,12 @@
 # DCBA
 
 
-val1 = 'ABCD'
+# val="ABCD"
+# for x in range(1,len(val)+1):
+#     print(val[::-1][:x])
 
     
-
-
+# #----------------------------------------------------------------
 
 
 
@@ -633,24 +704,80 @@ val1 = 'ABCD'
 # DARGPU
 
 
+# s = input("Enter string: ")
+
+# rev = s[::-1]
+# for i in range(1, len(rev)+1):
+#     print(rev[:i])
+
+
+# #----------------------------------------------------------------
 
 
 
+#33.	Create a list of odd numbers from 1 to 10
+#1.	Using for loop
+#2.	Using comprehensive list
+# odd_list=[]
+# for i in range(1,11):
+#     if i%2!=0:
+#         odd_list.append(i)
+# odd_list
+
+# #OR
+
+# #2.	Using comprehensive list
+# odd_list=[i for i in range(1,11) if i%2!=0]
+# odd_list
+
+
+# #----------------------------------------------------------------
 
 
 
+##34.Create even number list using for loop from 200 to 250
 
-# 29.	Create the format mentioned below:
-# A
-# BB
-# CCC
-# DDDD
+# even_list=[]
+# for i in range(200,250):
+#     if i%2==0:
+#         even_list.append(i)
+# even_list
+
+
+# #----------------------------------------------------------------
+
+
+#35.	List2 = [2,70,'work', para, 2.5, [1,2,3], (1,2), {1,2}, {1:'a', 2:'b'}, 3,10,302.5]
+#Multiply each and every element by 2 and display the answer
+
+
+# list2 = [2, 70, 'work', 'para', 2.5, [1,2,3], (1,2), {1,2}, {1:'a', 2:'b'}, 3, 10, 302.5]
+# result = []
+# for item in list2:
+#     result.append(item*2)
+# print(result)
 
 
 
-# 30.	Create the format mentioned below:
-#     *
-#    ***
-#   *****
-#  *******
+# #----------------------------------------------------------------
+
+
+
+#38.Create a function to validate user first name/last name. 
+#User first name/last name should contain only characters. No special characters, numbers, space in name
+
+
+# Fname=input("Enter First Name: ")
+# Lname=input("Enter Last Name: ")
+# def validate_name():
+#     if(Fname.isalpha() and Lname.isalpha() or not Fname.isdigit() and  Lname.isdigit()):
+#         return Fname+" "+Lname
+# Full_name=validate_name()
+# Full_name
+
+
+# #----------------------------------------------------------------
+
+
+
 

@@ -553,6 +553,11 @@ print(p)
 
 # 25. Write a lambda that returns the square if number is even, cube if odd.
 
+calc = lambda x: x**2 if x % 2 == 0 else x**3
+
+print( calc(4))   # even
+print( calc(3))   # odd
+
 
 
 
@@ -561,16 +566,33 @@ print(p)
 
 
 
+temps = [0, 10, 20, 30]
+
+fahrenheit = list(map(lambda c: (c * 9/5) + 32, temps))
+
+print("Fahrenheit values:", fahrenheit)
+
+
 
 # #---------------------------#---------------------------#---------------------------#--------------------------------------
 # 27. Write a lambda to check if two strings are anagrams. 
 
+is_anagram = lambda a, b: sorted(a.lower()) == sorted(b.lower())
+
+print("Are anagrams:", is_anagram("listen", "silent"))
 
 
 
 
 # #---------------------------#---------------------------#---------------------------#--------------------------------------
 # 28. Use lambda to extract only numeric values from a mixed list. 
+
+data = [1, "hello", 3.5, "world", 10]
+
+numbers = list(filter(lambda x: isinstance(x, (int, float)), data))
+
+print("Numeric values:", numbers)
+
 
 
 
@@ -579,11 +601,28 @@ print(p)
 # 29. Use lambda inside any() to check if any list element is negative. 
 
 
+nums = [5, 3, -2, 8]
+
+has_negative = any(map(lambda x: x < 0, nums))
+
+print("Contains negative number:", has_negative)
+
+
+
 
 
 
 # #---------------------------#---------------------------#---------------------------#--------------------------------------
 # 30. Use lambda to generate a function that multiplies any number by n 
+
+
+multiplier = lambda n: lambda x: x * n
+
+double = multiplier(2)
+triple = multiplier(3)
+
+print("Double value:", double(5))
+print("Triple value:", triple(5))
 
 
 
