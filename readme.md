@@ -11,7 +11,10 @@ This is my first Python project built using OOP concepts.
 It generates customer bills, calculates the total amount, and stores customer and item details in a database.  
 The system is designed using multiple classes to manage customer information and billing logic separately.  
 
-**OOP Concepts Used:** Encapsulation, Object Creation  
+**OOP Concepts Used:** Encapsulation, Object Creation, Separation of Responsibilities
+
+**Data Engineering Concepts Applied:** Relational Data Modeling (Customers & BillItems tables), Transaction Handling, Structured Data Ingestion, SQL-Based Data Persistence, Primary–Foreign Key Relationships, and a basic ETL-style workflow (User Input → Data Processing → Database Storage).
+
 **Purpose:** To understand class structure, database connectivity, and real-world billing system logic.
 
 ---
