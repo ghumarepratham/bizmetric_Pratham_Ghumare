@@ -1,4 +1,4 @@
-# 📌 Python Projects and Assignments
+# Python Projects and Assignments
 
 This repository contains my Python learning projects and practice assignments.  
 It includes two major OOP-based projects and two structured assignment sets.
@@ -16,7 +16,7 @@ The system is designed using multiple classes to manage customer information and
 
 ---
 
-## 🎬 2️⃣ Netflix Backend System (Second Project)
+## 2. Netflix Backend System
 
 This project simulates a Netflix-like backend system using Python and SQL Server (SSMS).  
 It allows users to register, choose subscription plans (Basic, Standard, Premium), make payments, and add movies to favourites.  
