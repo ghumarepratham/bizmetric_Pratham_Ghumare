@@ -33,7 +33,7 @@
 #         if more != "yes":
 #             break
 
-#     # ---------- Prepare bill lines ----------
+#   
 #     bill_lines = []
 
 #     bill_lines.append("{:^50}".format(hotel))
@@ -49,19 +49,17 @@
 #     bill_lines.append("")
 #     bill_lines.append("{:^50}".format(thanks))
 
-#     # ---------- Display bill on terminal ----------
 #     print("\n")
 #     for line in bill_lines:
 #         print(line)
 
-#     # ---------- Ask for print ----------
 #     choice = input("\nDo you want to print the bill? (yes/no): ").lower()
 
 #     if choice == "yes":
 #         now = datetime.now()
 #         filename = now.strftime("Hotel_bill_%Y-%m-%d_%H-%M-%S.txt")
 
-#         # CHANGE THIS PATH AS PER YOUR SYSTEM
+#      
 #         path = path = "C:/Users/Shree/Desktop/Bizmetric ILP/Python/Assignments/Bill print/"
 
 #         full_path = path + filename
@@ -184,115 +182,113 @@
 
 
 
-# Generating Bill print using class - object Using Opps COncept and storing bill in local
+# # Generating Bill print using class - object Using Opps COncept and storing bill in local
 
 
 
-from datetime import datetime
+# from datetime import datetime
 
 
-# -------- Menu Class --------
-class Menu:
-    def __init__(self):
-        self.items = {
-            "Dosa": 50,
-            "Idli": 30,
-            "Tea": 20
-        }
 
-    def get_price(self, item):
-        return self.items.get(item, None)
+# class Menu:
+#     def __init__(self):
+#         self.items = {
+#             "Dosa": 50,
+#             "Idli": 30,
+#             "Tea": 20
+#         }
 
-
-# -------- Customer Order Class --------
-class CustomerOrder:
-    def __init__(self, customer_name, menu):
-        self.customer_name = customer_name
-        self.menu = menu
-        self.bill_items = []
-        self.total = 0
-
-    def add_item(self, item, qty):
-        rate = self.menu.get_price(item)
-        if rate is None:
-            print("Item not available.")
-            return
-
-        amount = rate * qty
-        self.bill_items.append((item, qty, rate, amount))
-        self.total += amount
-
-    def generate_bill_lines(self):
-        hotel = "Welcome to our Hotel"
-        thanks = "Thanks For Visiting."
-
-        lines = []
-        lines.append("{:^50}".format(hotel))
-        lines.append(f"Customer: {self.customer_name}")
-        lines.append("")
-        lines.append("{:<15} {:<10} {:<10} {:<10}".format("Item", "Qty", "Rate", "Amount"))
-        lines.append("-" * 50)
-
-        for item, qty, rate, amount in self.bill_items:
-            lines.append("{:<15} {:<10} {:<10} {:<10}".format(item, qty, rate, amount))
-
-        lines.append("-" * 50)
-        lines.append("{:<35} {:<10}".format("Total Amount", self.total))
-        lines.append("")
-        lines.append("{:^50}".format(thanks))
-
-        return lines
-
-    def print_bill(self):
-        lines = self.generate_bill_lines()
-        for line in lines:
-            print(line)
-
-    def save_bill(self):
-        now = datetime.now()
-        filename = now.strftime(f"{self.customer_name}_%Y-%m-%d_%H-%M-%S.txt")
-
-        path = "C:/Users/Shree/Desktop/Bizmetric ILP/Python/Assignments/Bill print/"
-        full_path = path + filename
-
-        lines = self.generate_bill_lines()
-
-        with open(full_path, "w") as file:
-            for line in lines:
-                file.write(line + "\n")
-
-        print(f"\nBill saved at:\n{full_path}")
+#     def get_price(self, item):
+#         return self.items.get(item, None)
 
 
-# -------- Main Execution --------
+# class CustomerOrder:
+#     def __init__(self, customer_name, menu):
+#         self.customer_name = customer_name
+#         self.menu = menu
+#         self.bill_items = []
+#         self.total = 0
 
-menu = Menu()
+#     def add_item(self, item, qty):
+#         rate = self.menu.get_price(item)
+#         if rate is None:
+#             print("Item not available.")
+#             return
 
-while True:
-    customer_name = input("\nEnter customer name: ")
+#         amount = rate * qty
+#         self.bill_items.append((item, qty, rate, amount))
+#         self.total += amount
 
-    customer = CustomerOrder(customer_name, menu)
+#     def generate_bill_lines(self):
+#         hotel = "Welcome to our Hotel"
+#         thanks = "Thanks For Visiting."
 
-    while True:
-        item = input("Enter item name (Dosa/Idli/Tea): ").title()
-        qty = int(input("Enter quantity: "))
+#         lines = []
+#         lines.append("{:^50}".format(hotel))
+#         lines.append(f"Customer: {self.customer_name}")
+#         lines.append("")
+#         lines.append("{:<15} {:<10} {:<10} {:<10}".format("Item", "Qty", "Rate", "Amount"))
+#         lines.append("-" * 50)
 
-        customer.add_item(item, qty)
+#         for item, qty, rate, amount in self.bill_items:
+#             lines.append("{:<15} {:<10} {:<10} {:<10}".format(item, qty, rate, amount))
 
-        more = input("Add more items? (yes/no): ").lower()
-        if more != "yes":
-            break
+#         lines.append("-" * 50)
+#         lines.append("{:<35} {:<10}".format("Total Amount", self.total))
+#         lines.append("")
+#         lines.append("{:^50}".format(thanks))
 
-    print("\n")
-    customer.print_bill()
+#         return lines
 
-    save = input("\nSave bill? (yes/no): ").lower()
-    if save == "yes":
-        customer.save_bill()
+#     def print_bill(self):
+#         lines = self.generate_bill_lines()
+#         for line in lines:
+#             print(line)
 
-    next_customer = input("\nNext customer? (yes/no): ").lower()
-    if next_customer != "yes":
-        break
+#     def save_bill(self):
+#         now = datetime.now()
+#         filename = now.strftime(f"{self.customer_name}_%Y-%m-%d_%H-%M-%S.txt")
+
+#         path = "C:/Users/Shree/Desktop/Bizmetric ILP/Python/Assignments/Bill print/"
+#         full_path = path + filename
+
+#         lines = self.generate_bill_lines()
+
+#         with open(full_path, "w") as file:
+#             for line in lines:
+#                 file.write(line + "\n")
+
+#         print(f"\nBill saved at:\n{full_path}")
+
+
+
+# menu = Menu()
+
+# while True:
+#     customer_name = input("\nEnter customer name: ")
+
+#     customer = CustomerOrder(customer_name, menu)
+
+#     while True:
+#         item = input("Enter item name (Dosa/Idli/Tea): ").title()
+#         qty = int(input("Enter quantity: "))
+
+#         customer.add_item(item, qty)
+
+#         more = input("Add more items? (yes/no): ").lower()
+#         if more != "yes":
+#             break
+
+#     print("\n")
+#     customer.print_bill()
+
+#     save = input("\nSave bill? (yes/no): ").lower()
+#     if save == "yes":
+#         customer.save_bill()
+
+#     next_customer = input("\nNext customer? (yes/no): ").lower()
+#     if next_customer != "yes":
+#         break
 
 
 
@@ -312,6 +308,11 @@ while True:
 
 
 ##Hotel bill printing and storing data in database all included in this
+
+
+
+
+
 
 
 

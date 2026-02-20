@@ -32,12 +32,10 @@ upper_words = [w.upper() for w in words]
 print(upper_words)
 
 
-
 #OR
 
 p = "pratham"
 print(p.upper())
-
 
 
 
