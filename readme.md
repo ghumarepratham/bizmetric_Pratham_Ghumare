@@ -18,15 +18,19 @@ The system is designed using multiple classes to manage customer information and
 
 ## 2. Netflix Backend System
 
-This project simulates a Netflix-like backend system using Python and SQL Server (SSMS).  
-It allows users to register, choose subscription plans (Basic, Standard, Premium), make payments, and add movies to favourites.  
-The system prevents duplicate email registrations and fetches plan prices directly from the database.
+This project simulates a Netflix-like backend system using Python and SQL Server (SSMS).
+It allows users to register, choose subscription plans (Basic, Standard, Premium), make payments, and add movies to favourites while ensuring structured data storage and integrity.
+The system prevents duplicate email registrations using database constraints and fetches plan prices dynamically from the database to maintain data consistency and normalization.
 
 **Classes Used:** Account, Plans, Payments, Movies  
 Each class handles a specific responsibility to maintain clean and modular backend architecture.  
 
 **OOP Concepts Used:** Encapsulation, Abstraction, Object Creation  
 **Purpose:** To build structured backend logic with proper database validation and real-world workflow design.
+
+**Data Engineering Concepts Applied:** Relational Data Modeling, Data Validation & Integrity Constraints, Transaction Handling, SQL-Based Data Retrieval, and Backend Data Pipeline Simulation.
+
+
 
 ---
 

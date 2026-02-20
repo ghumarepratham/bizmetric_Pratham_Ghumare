@@ -45,7 +45,6 @@ class Plans:
         else:
             return None
 
-
 class Payments:
     def __init__(self, user_id, amount):
         self.user_id = user_id
@@ -59,7 +58,6 @@ class Payments:
         )
         conn.commit()
         print("Payment Successful!")
-
 
 class Movies:
     def show_movies(self):
@@ -82,7 +80,6 @@ class Movies:
             print(result[0], "added to favourites!")
         else:
             print("invalid Movie Selection!")
-
 
 print("welcome to Netflix\n")
 
@@ -112,7 +109,6 @@ else:
         print("Invalid Plan Selected!")
         exit()
 
-
 movies = Movies()
 
 while True:
@@ -123,7 +119,6 @@ while True:
     more = input("Add more movies? (yes/no): ")
     if more.lower() != "yes":
         break
-
 
 with open("acknowledgement.txt", "a") as file:   #ad acknowledgement for priting user details
     file.write("----- NETFLIX RECEIPT -----\n")

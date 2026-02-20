@@ -17,3 +17,13 @@ Email: abc@gmail.com
 Login Time: 2026-02-20 01:46:37.742376
 Enjoy Watching!
 -----------------------------------!
+----- NETFLIX RECEIPT -----
+Email: bcd@gmail.com
+Login Time: 2026-02-20 16:13:22.906504
+Enjoy Watching!
+-----------------------------------!
+----- NETFLIX RECEIPT -----
+Email: abc@gmail.com
+Login Time: 2026-02-20 16:40:23.839429
+Enjoy Watching!
+-----------------------------------!
